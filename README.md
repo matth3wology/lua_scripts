@@ -3,9 +3,6 @@
 These are some basic lua scripts.
 
 ### Using Sockets
-You may get an error with ```local socket = require("socket")```
+You may get an error with ```local socket = require("socket")```.
 
-So install the library via luarocks.
-```
-luarocks install luasocket
-```
+Install socket library via luarocks - ```luarocks install luasocket```.
