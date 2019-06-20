@@ -1,2 +1,3 @@
-# lua_scripts
-Lua scripts.
+# Lua
+
+These are some basic lua scripts.
