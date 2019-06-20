@@ -3,6 +3,7 @@
 local io = require("io")
 local http = require("socket.http")
 local ltn12 = require("ltn12")
+local mime = require("mime")
 
 function http_print(url_str)
     -- Request and print to STDOUT
@@ -22,6 +23,18 @@ function get_html(url)
 end
 
 
-local html = get_html("http://www.example.com")
+--local html = get_html("http://www.example.com")
+--print(html)
 
-print(html)
+function http_basic_auth(url_string,user,pass)
+    -- Basic Header Example
+    data = http.request{
+        url = url_string,
+        headers = { 
+            authentication = "Basic " .. mime.b64(user..":"..pass),
+        }
+    }
+    print(data)
+end
+
+http_basic_auth("http://127.0.0.1","matth3wology","12345lol")
